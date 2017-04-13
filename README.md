@@ -1,5 +1,7 @@
 # devoxxfr2017
-Slide from Devoxx France 2017 conférence : "une application qui voit, entend et répond"
+Slide from Devoxx France 2017 conference : "une application qui voit, entend et répond"
+
+You can view the slides at : https://jollivetc.github.io/devoxxfr2017/#/
 
 The presentation was done with Mickael Debonnaire https://github.com/mdebonnaire
 
