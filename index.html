@@ -1,0 +1,740 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Une application qui voit, écoute et répond</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<!--link rel="stylesheet" href="css/theme/black.css" id="theme"-->
+		<link rel="stylesheet" href="css/theme/devoxxfr.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-state="intro">
+					<h1>Une application qui voit, entend et répond</h1>
+					<img data-src="../images/Apside.png" style="width: 20%;margin-left:auto;margin-right:auto;display:block;margin-top:10%" />
+					<p style="margin-top:10%">Mickael Débonnaire <a href="http://twitter.com/mdebonnaire">@mdebonnaire</a><br />
+					Christophe Jollivet <a href="http://twitter.com/jollivetc">@jollivetc</a></p>
+				</section>
+				<section>
+					<h2>Histoire</h2>
+					<img data-src="../images/ironman.jpg" style="width: 70%;margin-left:auto;margin-right:auto;display:block;" />
+				</section>
+				<section data-state="presentation">
+					<h2>speakers</h2>
+					<div style="width: 40%; display: inline-block; margin-right: 5%; text-align: center; margin-left: 5%">
+    				<br>
+						<h4>Christophe Jollivet</h4>
+						<br>
+						<p>@jollivetc<br />
+
+						Agitateur Technique<br />
+						Apside</p><br/><br/><br/><br/>
+  				</div>
+  				<div style="width: 40%; display: inline-block; text-align: center; margin-right: 3%; margin-left: 5%">
+						<br>
+						<h4>Mickael Débonnaire</h4>
+						<br>
+						<p>@mdebonnaire<br />
+						FullStack Développeur<br />
+						Apside<br>
+							<br/><br/><br/><br/>
+  				</div>
+				</section>
+				<section data-state="endPresentation"  align="center">
+				</section>
+				<section>
+						<img data-src="../images/Nuage.png" style="width: 50%;margin-left:auto;margin-right:auto;display:block" />
+				</section>
+				<section align="center" >
+					<h2>Le projet</h2>
+					<img data-src="../images/quiestce.jpg" style="width: 50%;margin-left:auto;margin-right:auto;display:block;margin-top:5%" />
+				</section>
+				<section align="center" >
+					<h1>Démo</h1>
+				</section>
+				<section>
+					<h2>Etapes</h2>
+					<p>Voir</p>
+					<p>Entendre</p>
+					<p>Comprendre</p>
+					<p>Répondre</p>
+				</section>
+				<section data-state="flash" align="center">
+					<h1>Voir</h1>
+				</section>
+				<section>
+					<h2>La problèmatique </h2>
+					<br>
+					<br>
+					<br>
+					<h4 data-state="flash" align="center" >"Comment identifier les éléments d'un visage?"</h4>
+				</section>
+				<section>
+					<h2>Théorie</h2>
+
+					<ul>
+						<li class="fragment" data-fragment-index="1">Domaine IA : Traitement d'image, Reconnaissance des formes , Face recognition </li>
+						<li class="fragment" data-fragment-index="2">Mots clés: Extraction Feature Face Recognition</li>
+						<li class="fragment" data-fragment-index="3">Exemple d'algorithmes : filtre de Gabor et réseaux de neurones</li>
+					</ul>
+					<br><br>
+					<p align="center" class="fragment" data-fragement-index="4"><b>Mais aussi API "clé en main"</b></p>
+				</section>
+				<section>
+					<h2>Cloud Vision API</h2>
+					<p>De nombreuses solutions génériques</p>
+					<ul>
+						<li><a href="https://cloud.google.com/vision/">Google Cloud Vision API</a></li>
+						<li><a href="https://www.microsoft.com/cognitive-services/">Microsoft cognitive services</a></li>
+						<li><a href="https://aws.amazon.com/fr/rekognition/">AWS Rekognition</a></li>
+						<li><a href="https://www.ibm.com/watson/developercloud/visual-recognition.html">Watson visual recognition (IBM)</a></li>
+					</ul>
+					<p>Des solutions spécialisées</p>
+					<ul>
+						<li><a href="https://www.kairos.com/">Kairos</a></li>
+						<li><a href="https://www.betafaceapi.com">Betaface</a></li>
+					</ul>
+				</section>
+				<section>
+					<h2>Informations</h2>
+					<table>
+						<tr class="hljs-title">
+							<td>Service</td>
+							<td>Informations</td>
+						</tr>
+						<tr>
+							<td>Google</td>
+							<td>Label, logo, landmark, OCR, visage, attributs</td>
+						</tr>
+						<tr>
+							<td>Microsoft</td>
+							<td>Label, description, OCR, visage, attributs</td>
+						</tr>
+						<tr>
+							<td>AWS</td>
+							<td>label, visage, attributs</td>
+						</tr>
+						<tr>
+							<td>Watson</td>
+							<td>label, visage</td>
+						</tr>
+						<tr>
+							<td>Kairos</td>
+							<td>visage</td>
+						</tr>
+						<tr>
+							<td>Betaface</td>
+							<td>visage</td>
+						</tr>
+					</table>
+				</section>
+				<section>
+					<h2>Informations de visage</h2>
+					<table>
+						<tr class="hljs-title">
+							<th>Service</th>
+							<th>Informations</th>
+						</tr>
+						<tr>
+							<td>Google</td>
+							<td>Point, direction, expression</td>
+						</tr>
+						<tr>
+							<td>Microsoft</td>
+							<td>Points, direction, age, expression, genre, barbe, lunette</td>
+						</tr>
+						<tr>
+							<td>AWS</td>
+							<td>Points, direction, age, expression, genre, barbe, lunette</td>
+						</tr>
+						<tr>
+							<td>Watson</td>
+							<td>Age, genre</td>
+						</tr>
+						<tr>
+							<td>Kairos</td>
+							<td>Points, direction, age, genre, ethnie</td>
+						</tr>
+						<tr>
+							<td>Betaface</td>
+							<td>Points, direction, age, expression, genre, ethnie, barbe, lunette, cheveux, dents... </td>
+						</tr>
+					</table>
+				</section>
+				<section>
+					<h2>Betaface : les critères</h2>
+					<ul>
+						<li>Genre : male | female</li>
+						<li>Lunette : yes | no</li>
+						<li>Barbe : yes | no</li>
+						<li>Type de couleur de cheveux : black | blond | red | brown | brown light | not natural light | not natural</li>
+					</ul>
+					<p>Soit 2*2*2*7 = 56 groupes</p>
+				</section>
+				<section>
+					<h2>L'utilisation de BetaFace</h2>
+					<p>Détection en deux temps</p>
+					<ul>
+						<li>un service pour enregistrer l'image</li>
+						<li>un service pour récupérer les caractéristiques de l'image</li>
+					</ul>
+				</section>
+				<section align="center">
+					<h2>Statistiques</h2>
+					<p>232/274 speakers analysés</p>
+					<ul class="fragment" data-fragment-index="1">
+						<li>2 error 404</li>
+						<li>4 error 403</li>
+						<li>3 empty file</li>
+						<li>5 error processing file</li>
+						<li>1 URL too long</li>
+						<li>27 no face detected</li>
+					</ul>
+				</section>
+				<section align="center">
+					<h2>No Face</h2>
+					<div class="fragment" data-fragment-index="1" style="width: 80%; display: inline-block; text-align: center;">
+						<p>Vrai</p>
+						<img data-src="../images/noFaceTrue1.jpg" width="10%" />
+						<img data-src="../images/noFaceTrue2.png" width="10%" />
+						<img data-src="../images/noFaceTrue3.jpg" width="10%" />
+						<img data-src="../images/noFaceTrue4.jpg" width="10%" />
+					</div>
+					<div class="fragment" data-fragment-index="2" style="width: 80%; display: inline-block; text-align: center;">
+						<p>Art</p>
+						<img data-src="../images/noFaceArt1.jpg" width="10%" />
+						<img data-src="../images/noFaceCartoon1.jpeg" width="10%" />
+						<img data-src="../images/noFaceCartoon2.jpg" width="10%" />
+						<img data-src="../images/noFaceCartoon3.jpeg" width="10%" />
+					</div>
+				</section>
+				<section align="center">
+					<h2>No Face</h2>
+					<div class="fragment" data-fragment-index="1" style="width: 80%; display: inline-block; text-align: center;">
+						<p>Loin et petit</p>
+						<img data-src="../images/noFaceFar1.jpeg" width="10%" />
+						<img data-src="../images/noFaceFar2.jpeg" width="10%" />
+						<img data-src="../images/noFaceFar3.jpeg" width="10%" />
+						<img data-src="../images/noFaceFar4.jpeg" width="10%" />
+					</div>
+					<div class="fragment" data-fragment-index="2" style="width: 80%; display: inline-block; text-align: center;">
+						<p>Profil</p>
+						<img data-src="../images/noFaceProfile1.jpg" width="10%" />
+						<img data-src="../images/noFaceProfile2.png" width="10%" />
+						<img data-src="../images/noFaceProfile3.jpeg" width="10%" />
+						<img data-src="../images/noFaceProfile4.jpg" width="10%" />
+						<img data-src="../images/noFaceProfile5.jpg" width="10%" />
+						<img data-src="../images/noFaceProfile6.png" width="10%" />
+						<img data-src="../images/noFaceProfile7.jpg" width="10%" />
+					</div>
+				</section>
+				<section>
+					<h2>Bétisier</h2>
+					<div class="fragment" data-fragment-index="1" style="width: 80%; display: inline-block; text-align: center;">
+						<div style="width: 40%; display: inline-block; margin-right: 5%; text-align: center; margin-left: 10%">
+							<img data-src="../images/noHair1.jpeg" width="30%" />
+							<img data-src="../images/noHair3.png" width="30%" />
+							<img data-src="../images/noHair5.jpg" width="30%" />
+							<p>brun à 0, 0 et 0,32</p>
+						</div>
+						<div style="width: 40%; display: inline-block;">
+							<img data-src="../images/noHair4.jpeg" width="30%" />
+							<img data-src="../images/noHair2.jpg" width="30%" />
+							<p>blond à 0,38 et 0,75</p>
+						</div>
+
+					</div>
+					<div class="fragment" data-fragment-index="2" style="width: 80%; display: inline-block; text-align: center;">
+						<img data-src="../images/femmeBarbe1.jpeg" width="15%" />
+						<img data-src="../images/femmeBarbe2.jpg" width="15%" />
+						<p>femme à 0,65 et 1</p>
+					</div>
+				</section>
+				<section>
+					<h2>Femmes</h2>
+					<p> 53 speakers identifiés comme femme</p>
+
+					<p>Philippe, <span style="color:red;">Isabelle</span>, Thomas,
+ Morgan, Erwan, Josh, Simon, Charles,
+ <span style="color:red;">Meriem</span>, Antonin, Yvan, Yves, Grégory, Alexandre,
+ <span style="color:red;">Lauren</span>, Quentin, Laurent, RAMRAMI,
+ Gabriel, Hugo, Olivier, <span style="color:red;">Heather</span>,
+ <span style="color:red;">Megane</span>, Jean, Fred, Yiquan,
+ <span style="color:red;">Sarah</span>, <span style="color:red;">Sonia</span>, Bounkong,
+ Jean-Francois, Jean-Christophe, Ryan, Mathieu, <span style="color:red;">Laure</span>,
+ Eric, Etienne, Yannick, Guillaume, <span style="color:red;">Angela</span>,
+ Emmanuel, Benjamin, Dimitri, Brian, Jérôme, Christophe, <span style="color:red;">Laurène</span>,
+ Bachir, Nicolas, Matt
+				</section>
+				<section>
+					<h2>Utilisation</h2>
+					<p>En amont pour alimenter la base de données</p>
+					<p>Deux services :</p>
+					<ul>
+						<li>Récupération de n speakers ID dans des catégories différentes</li>
+						<li>Récupération d'informations des speakers</li>
+					</ul>
+				</section>
+
+				<section data-state="flash" align="center">
+					<h1>Entendre/Ecouter</h1>
+				</section>
+				<section>
+					<h2>La problèmatique </h2>
+					<br>
+					<br>
+					<br>
+					<h4 data-state="flash" align="center" >"Comment transformer un flux audio/ un son vers du texte?"</h4>
+				</section>
+				<section>
+					<h2>Théorie</h2>
+
+					<ul>
+						<li class="fragment" data-fragment-index="1">Domaine IA : Reconnaissance Vocale, sous-domaine de Natural Language Processing NLP </li>
+						<li class="fragment" data-fragment-index="2">Mots clés: Speech To Text et Automated Speech Recognition(ASR)</li>
+						<li class="fragment" data-fragment-index="3">Exemple d'algorithme : Chaînes de Markov cachées ou/et Réseaux de neurones</li>
+					</ul>
+					<br><br>
+					<p align="center" class="fragment" data-fragement-index="4"><b>Mais aussi API "clé en main"</b></p>
+				</section>
+				<section>
+					<h2>API Speech to Text</h2>
+					<ul>
+						<li class="fragment" data-fragment-index="1">API en ligne</li>
+						<ul class="fragment" data-fragment-index="1">
+							<li>Watson, Google, Microsoft</li>
+						</ul>
+						<li class="fragment" data-fragment-index="2">Bibliothèques</li>
+						<ul class="fragment" data-fragment-index="2">
+							<li>JuliusJS</li>
+							<li>Pocketsphinx.js</li>
+							<li>Wrappers de SpeechRecognition</li>
+						</ul>
+					</ul>
+				</section>
+				<section>
+					<h2>Support</h2>
+					<img data-src="../images/SpeechRecog.png" style="width: 70%;margin-left:auto;margin-right:auto;display:block;" />
+					<p align="center" style="margin-top:-10px"><a href="http://caniuse.com/#search=speechrecognition">http://caniuse.com/#search=speechrecognition</a></p>
+				</section>
+				<section>
+					<h2>Le code</h2>
+					<pre><code data-trim data-noescape>
+var recognition = new webkitSpeechRecognition();
+recognition.onresult= function(event){
+	console.log(event.results[0][0].transcript);
+	console.log(event.results[0][0].confidence);
+}
+recognition.start();
+</code></pre>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#rec").click(function(event) {
+			switchRecognition();
+		});
+	});
+	var recognition;
+	function startRecognition() {
+		setOutput('');
+		recognition = new webkitSpeechRecognition();
+		var speechRecognitionList = new webkitSpeechGrammarList();
+		recognition.onstart = function(event) {
+			updateRec();
+		};
+		recognition.onresult = function(event) {
+			var text = event.results[0][0].transcript;
+			text+=" at ";
+			text+=event.results[0][0].confidence;
+			setOutput(text);
+			stopRecognition();
+		};
+		recognition.onend = function() {
+			stopRecognition();
+		};
+		recognition.lang = "fr-FR";
+		recognition.start();
+	}
+
+	function stopRecognition() {
+		if (recognition) {
+			recognition.stop();
+			recognition = null;
+		}
+		updateRec();
+	}
+	function switchRecognition() {
+		if (recognition) {
+			stopRecognition();
+		} else {
+			startRecognition();
+		}
+	}
+	function setOutput(text) {
+		$("#output").text(text);
+	}
+	function updateRec() {
+		$("#rec").text(recognition ? "Stop" : "Speak");
+	}
+</script>
+<div style="width: 50%; display: inline-block; margin-right: 5%; text-align: center;">
+	<button id="rec">Listen</button> <span id="output"></span>
+</div>
+				</section>
+				<section>
+					<h2>Code</h2>
+					<pre><code data-trim data-noescape><mark>var recognition = new webkitSpeechRecognition();
+recognition.onresult= function(event){
+	console.log(event.results[0][0].transcript);
+	console.log(event.results[0][0].confidence);
+}</mark>
+recognition.lang="fr-FR";
+recognition.onend= function(event){};
+recognition.onstart= function(event){};<mark>
+recognition.start();</mark>
+</code></pre>
+				</section>
+				<section>
+					<h2>Problèmes</h2>
+					<ul>
+						<li class="fragment" data-fragment-index="1">Chrome only</li>
+						<li class="fragment" data-fragment-index="2">Confidentialité</li>
+						<li class="fragment" data-fragment-index="3">Grammar à approfondir</li>
+						<li class="fragment" data-fragment-index="4">Autorisations</li>
+						<li class="fragment" data-fragment-index="5">Ecoute en continue</li>
+						<li class="fragment" data-fragment-index="6">Multi onglets</li>
+					</ul>
+				</section>
+				<section data-state="flash" align="center">
+					<h1>Comprendre</h1>
+				</section>
+				<section>
+					<h2>La problèmatique </h2>
+					<br><br><br>
+					<h4 data-state="flash" align="center">"Comment analyser, réagir et se souvenir ?"</h4>
+				</section>
+				<section>
+					<h2>Théorie</h2>
+					<ul>
+						<li class="fragment" data-fragment-index="1">Domaine IA: Classification et extraction d'informations, sous-domaine de NLP et NLU, Agents Conversationnels </li>
+						<li class="fragment" data-fragment-index="2">Mots clés: NLP, NLU, Named-entity recognition</li>
+						<li class="fragment" data-fragment-index="3">Exemple d'algorithme : Classification à partir de modèles statistiques et stochastiques</li>
+					</ul>
+					<br><br>
+					<p align="center" class="fragment" data-fragement-index="4"><b>Mais aussi des plateformes "clé en main"</b></p>
+				</section>
+				<section align="center">
+					<h2>les Bots conversationnels</h2>
+					<p>Type simple</p>
+					<br>
+					<ul>
+						<li>Conversation basique</li>
+						<li>Nombreuses plateformes</li>
+						<li>Exemples : Chatfuel, Octane.ai, Motion.ai </li>
+					</ul>
+				</section>
+				<section align="center">
+					<h2>les Bots conversationnels</h2>
+					<p>Type simple "programmable"</p>
+					<br>
+					<ul>
+						<li>Conversation simple</li>
+						<li>Modèle XML de la conversation</li>
+						<li>Exemples : Pandorabots </li>
+					</ul>
+				</section>
+				<section align="center">
+					<h2>les Bots conversationnels</h2>
+					<p>"AI Platform" (notre choix)</p>
+					<br>
+					<ul>
+						<li>Conversation avancée</li>
+						<li>Interfaces, API, Machine Learning</li>
+						<li>Exemples : <span style="color:#edaf1f">Api.ai</span> , Wit.ai , Microsoft Luis, IBM Watson, Amazon Lex </li>
+					</ul>
+				</section>
+				<section align="center">
+					<h2>Capacités -> Concepts</h2>
+					<br>
+					<ul>
+						<li class="fragment" data-fragment-index="1">Comprendre -> Intention (Intent)</li>
+						<li class="fragment" data-fragment-index="2">Réagir -> Fallback Intent</li>
+						<li class="fragment" data-fragment-index="3">Extraire -> Entité</li>
+						<li class="fragment" data-fragment-index="4">Demander -> Dialog</li>
+						<li class="fragment" data-fragment-index="5">Conserver -> Contexte</li>
+						<li class="fragment" data-fragment-index="6">Faire -> Action, Webhook</li>
+						<li class="fragment" data-fragment-index="7">S'améliorer -> Training</li>
+					</ul>
+				</section>
+				<section>
+					<h2>API.ai : Intent</h2>
+					<img data-src="../images/botIntent.png" style="width: 40%;margin-left:auto;margin-right:auto;display:block;" />
+				</section>
+				<section>
+					<h2>API.ai Fallback</h2>
+					<img data-src="../images/botFallback.png" style="width:50%;margin-left:auto;margin-right:auto;display:block;" />
+				</section>
+				<section>
+					<h2>API.ai : Entity</h2>
+					<img data-src="../images/botEntity.png" style="width: 80%;margin-left:auto;margin-right:auto;display:block;" />
+				</section>
+				<section>
+					<h2>API.ai : Entity - Intent</h2>
+					<img data-src="../images/botIntentEntity.png" style="width: 40%;margin-left:auto;margin-right:auto;display:block;" />
+				</section>
+				<section>
+					<h2>API.ai : Dialog</h2>
+					<img data-src="../images/botDialog.png" style="width: 50%;margin-left:auto;margin-right:auto;display:block;" />
+				</section>
+				<section>
+					<h2>API.ai : Context</h2>
+					<img data-src="../images/botContextSet.png" style="margin-left:auto;margin-right:auto;display:block;" />
+					<img data-src="../images/botContextSetted.png" style="margin-left:auto;margin-right:auto;display:block;" />
+				</section>
+				<section>
+					<h2>API.ai : Webhook</h2>
+					<img data-src="../images/botWebhookConf.png" style="margin-left:auto;margin-right:auto;display:block;" />
+				</section>
+				<section>
+					<h2>API.ai : Webhook</h2>
+					<img data-src="../images/botWebhook.png" style="margin-left:auto;margin-right:auto;display:block;" />
+				</section>
+				<section>
+					<h2>Webhook</h2>
+					<pre><code>
+{
+	"speech": "Something to say",
+	"displayText": "More things to show",
+	"data": {...},
+	"contextOut": [...],
+	"source": "Some Web Site"
+}
+					</code></pre>
+				</section>
+				<section>
+					<h2>API.ai : Training</h2>
+					<img data-src="../images/training.png" style="margin-left:auto;margin-right:auto;display:block;" />
+				</section>
+				<section data-state="flash" align="center">
+					<h1>Répondre</h1>
+				</section>
+				<section>
+					<h2>La problèmatique </h2>
+					<br>
+					<br>
+					<br>
+					<h4 data-state="flash" align="center" >"Comment transformer un texte en flux Audio ?"</h4>
+				</section>
+				<section>
+	<h2>Théorie</h2>
+	<ul>
+		<li class="fragment" data-fragment-index="1">Domaine IA : Synthése vocale ( Text to Speech), sous-domaine de NLP </li>
+		<li class="fragment" data-fragment-index="2">Mot clé : TTS, Vocal Synthesis, Concatenative Synthesis, Parametric Synthesis</li>
+		<li class="fragment" data-fragment-index="3">Exemples d'algorithme : Concatenative, Parametric, WaveNet</li>
+	</ul>
+	<br><br>
+	<p align="center" class="fragment" data-fragement-index="4"><b>Mais aussi des API "clé en main"</b></p>
+</section>
+				<section>
+					<h2>API Text to Speech</h2>
+					<p>API en ligne</p>
+					<ul>
+						<li>Génération de flux audio</li>
+						<li>Latence réseau</li>
+						<li>Exemples : Text to speech Watson, Bing Speech, Amazon Polli, Acapella</li>
+					</ul>
+					<p>Speech Synthesis</p>
+				</section>
+				<section>
+					<h2>Support</h2>
+					<img data-src="../images/SpeechSynt.png" style="width: 70%;margin-left:auto;margin-right:auto;display:block;" />
+					<p align="center" style="margin-top:-10px"><a href="http://caniuse.com/#search=speechsynthesis">http://caniuse.com/#search=speechsynthesis</a></p>
+				</section>
+				<section>
+					<h2>code</h2>
+					<pre><code data-trim data-noescape>
+var msg = new SpeechSynthesisUtterance(message);
+msg.lang = 'fr-FR';
+window.speechSynthesis.speak(msg);
+					</code></pre>
+				</section>
+				<section data-transition="none">
+					<h2>code</h2>
+					<pre><code data-trim data-noescape><mark>var msg = new SpeechSynthesisUtterance(message);
+msg.lang = 'fr-FR';</mark>
+msg.voice = window.speechSynthesis.getVoices()[10];
+msg.pitch = 1;
+msg.rate = 1;
+<mark>window.speechSynthesis.speak(msg);</mark>
+					</code></pre>
+					<script type="text/javascript">
+					$(document).ready(function() {
+						$("#speak").click(function(event) {
+							var message = $("#myInput").val();
+							var msg = new SpeechSynthesisUtterance(message);
+							var selectedLanguageName = $("#mySelect").val();
+      				var voice =  window.speechSynthesis.getVoices().filter(voice => voice.voiceURI===selectedLanguageName);
+							msg.voice = voice[0];
+        			window.speechSynthesis.speak(msg);
+						});
+						window.speechSynthesis.onvoiceschanged = function() {
+							var mySelect = $("#mySelect")
+							window.speechSynthesis.getVoices().forEach(function(voice){
+									mySelect.append('<option value="'+voice.name+'">'+voice.name+' - '+voice.lang+'</option>')
+							})
+						};
+					})
+					</script>
+					<div style="width: 50%; display: inline-block; margin-right: 5%; text-align: center;">
+						<input id="myInput"><select id="mySelect"></select><button id="speak">Speak</button>
+					</div>
+				</section>
+				<section data-transition="none">
+					<h2>code</h2>
+					<pre><code data-trim data-noescape><mark>var msg = new SpeechSynthesisUtterance(message);
+msg.lang = 'fr-FR';
+msg.voice = window.speechSynthesis.getVoices()[10];
+msg.pitch = 1;
+msg.rate = 1;</mark>
+msg.onstart = function(event){};
+msg.onend = function(event){};
+<mark>window.speechSynthesis.speak(msg);</mark>
+					</code></pre>
+				</section>
+				<section data-state="flash" align="center">
+					<h1>Intégration</h1>
+				</section>
+				<section>
+					<h2>Analyse des images</h2>
+					<img data-src="../images/schema1.png" style="width: 50%;margin-left:auto;margin-right:auto;display:block;" />
+				</section>
+				<section>
+					<h2>Initialisation de partie</h2>
+					<img data-src="../images/schema2.png" style="width: 50%;margin-left:auto;margin-right:auto;display:block;" />
+				</section>
+				<section>
+					<h2>Initialisation de partie</h2>
+					<img data-src="../images/schema3.png" style="width: 50%;margin-left:auto;margin-right:auto;display:block;" />
+				</section>
+				<section>
+					<h2>Initialisation de partie</h2>
+					<img data-src="../images/schema4.png" style="width: 50%;margin-left:auto;margin-right:auto;display:block;" />
+				</section>
+				<section>
+					<h2>Partie</h2>
+					<img data-src="../images/schema5.png" style="width: 50%;margin-left:auto;margin-right:auto;display:block;" />
+				</section>
+				<section align="center">
+					<h2>Conclusion</h2>
+					<br>
+					<p class="fragment" data-fragment-index="1">Agréablement surpris par la simplicité</p>
+					<p class="fragment" data-fragment-index="2">Tout les services ne sont pas matures</p>
+
+				</section>
+				<section data-state="flash" align="center">
+					<h1>Questions</h1>
+				</section>
+			</div>
+            <div class="footer">
+              <p>#DevoxxFR @mdebonnaire @jollivetc</p><img align="right" src="../images/logos Devoxx France/logo-texte-devoxx-france-400.png" />
+            </div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+				center: false,
+				controls: false,
+				progress: true,
+                width: 1280,
+                height: 720,
+                slideNumber: true,
+                margin: 0.0,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+		<script>
+			Reveal.addEventListener('presentation', function(){
+				console.log("start presentation");
+				startPresentationRecognition();
+			})
+			Reveal.addEventListener('endPresentation', function(){
+				console.log("end presentation")
+				stopPresentationRecognition();
+			})
+			var presentationRecog;
+			function startPresentationRecognition() {
+				presentationRecog = new webkitSpeechRecognition();
+				presentationRecog.onresult = function(event) {
+					var text = "";
+			    for (var i = event.resultIndex; i < event.results.length; ++i) {
+			    	text += event.results[0][0].transcript;
+			    }
+			    callBot(text);
+					stopPresentationRecognition();
+				};
+				presentationRecog.onend = function() {
+					stopPresentationRecognition();
+				};
+				presentationRecog.lang = "fr-FR";
+				presentationRecog.start();
+			}
+			function stopPresentationRecognition() {
+				if (presentationRecog) {
+					presentationRecog.stop();
+					presentationRecog = null;
+				}
+			}
+			function callBot(text) {
+				$.ajax({
+					type: "POST",
+					url: "https://api.api.ai/v1/query?v=20150910",
+					contentType: "application/json; charset=utf-8",
+					dataType: "json",
+					headers: {
+						"Authorization": "Bearer 9df4592a7e90476dbe1bf0d562a5e3af"
+					},
+					data: JSON.stringify({ query: text, lang: "fr", sessionId: "somerandomthing" }),
+					success: function(data) {
+              var msg = new SpeechSynthesisUtterance(data.result.fulfillment.speech);
+            	msg.lang = 'fr-FR';
+							msg.voice = window.speechSynthesis.getVoices()[53]
+							msg.onstart=stopPresentationRecognition;
+							msg.onend=startPresentationRecognition;
+              window.speechSynthesis.speak(msg);
+					},
+					error: function() {
+						setResponse("Internal Server Error");
+					}
+				});
+			}
+		</script>
+	</body>
+</html>
